@@ -205,3 +205,41 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+extra/
+# Core LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.lb
+
+# Bibliography auxiliary files (BibTeX/Biber)
+*.bbl
+*.bcf
+*.blg
+*.-blx.aux
+*.run.xml
+
+# Index and Glossary files
+*.idx
+*.ind
+*.ilg
+*.gls
+*.glo
+*.glg
+*.glsdefs
+*.ist
+
+# Build tool artifacts (latexmk, etc.)
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
