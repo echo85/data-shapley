@@ -66,7 +66,7 @@ The Data shapley framework tries to answer the question of what is an equitable 
     \item \textbf{Performance Score} $V(S,\mathscr{A})$ to denote the performance score of the predictor trained on data $S$ using the learning algorithm $\mathscr{A}$
 \end{itemize}
 
-For every data point $(x_i,y_i) \in D$ we compute the \textbf{data value} and denote it as $\phi_i(D,\mathscr{A},V) \in \mathbb{R}$
+For every data point $(x_i,y_i) \in D$ (for simplicity $i$ is the same of $(x_i,y_i)$) we compute the \textbf{data value} and denote it as $\phi_i(D,\mathscr{A},V) \in \mathbb{R}$
 where the following equitable valuation conditions \cite{ghorbani2019data} should be satisfied:
 
 \begin{enumerate}
@@ -82,7 +82,7 @@ Any data valuation that satisfies the properties 1-3 above must have the form:
 where the sum is over all subsets of $D$ not containing $i$ and $C$ is an arbitrary constant. 
 $\phi_i$ is the Data Shapley value of source $i$.
 
-Each source in the train data is a player, and the players work together through the learning algorithm $\mathscr{A}$ to achieve a prediction score $V(D) = V (D, \mathscr{A})$.
+Each source in the train data is a player, and the players work together through the learning algorithm $\mathscr{A}$ to achieve a prediction score $v(D) = V (D, \mathscr{A})$ where $v:2^{[n]} \to \mathbb{R}$.
 However computing data Shapley value requires an exponentially large number of computations
 with respect to the number of train data sources. For this reason the "Truncated Monte Carlo Shapley" (TMC-Shapley) is developed, where a random permutation of sources in the train data is considered.
 \section{Truncated Monte Carlo Shapley}
