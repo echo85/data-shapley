@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-
+import seaborn as sns
 class Graph:
     def bank_projection(self, X_train,y_train):
         scaler = StandardScaler()
@@ -119,6 +119,22 @@ class Graph:
 
         plt.grid(True, linestyle='--', alpha=0.7)
         plt.legend()
+        plt.show()
+
+    def plot_histogram_log(self, shapley_values):
+        plt.figure(figsize=(10, 4))
+        plt.hist(shapley_values, bins=50, color='#377eb8', edgecolor='black', log=True, alpha=0.7)
+        plt.axvline(x=0, color='dimgray', linestyle='--', linewidth=1.5)
+        
+        plt.title(f'TMC-Shapley Values Distribution ({len(shapley_values)} Points) - Log Scale', fontsize=14, pad=15)
+        plt.xlabel('Calculated Shapley Value', fontsize=12)
+        plt.ylabel('Frequenza (Log Scale)', fontsize=12)
+        
+        ax = plt.gca()
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        
+        plt.tight_layout()
         plt.show()
 
     def shapley_distribution(self, shapley_values):
